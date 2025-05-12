@@ -24,7 +24,7 @@ app.post('/submit', async (req, res) => {
   const { nom, email, message, 'g-recaptcha-response': captcha } = req.body;
   if (!captcha) return res.status(400).send('Captcha manquant');
 
-  const verifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=VOTRE_CLÉ_SECRÈTE&response=${captcha}`;
+  const verifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=6LfquTYrAAAAAOEFKcYoDGEkXU9QJteXql4mN1sZ&response=${captcha}`;
   const captchaResponse = await fetch(verifyUrl, { method: 'POST' });
   const captchaResult = await captchaResponse.json();
 
